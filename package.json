@@ -1,0 +1,22 @@
+{
+  "name": "employeetracker",
+  "version": "1.0.0",
+  "description": "A Command Line application that allows the user to manger there employees.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/progg1992/employeeTracker.git"
+  },
+  "author": "Pierce Rogg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/progg1992/employeeTracker/issues"
+  },
+  "homepage": "https://github.com/progg1992/employeeTracker#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}

@@ -46,13 +46,13 @@ class Database {
         );
     }
 
-    createRole(role) {
-        return this.db_connection.query("INSERT INTO role SET ?", role);
-    }
+    // createRole(role) {
+    //     return this.db_connection.query("INSERT INTO role SET ?", role);
+    // }
 
-    removeRole(roleId) {
-        return this.db_connection.query("DELETE FROM role WHERE id = ?", roleId);
-    }
+    // removeRole(roleId) {
+    //     return this.db_connection.query("DELETE FROM role WHERE id = ?", roleId);
+    // }
 
     findEveryDepartment() {
         return this.db_connection.query(
@@ -60,13 +60,13 @@ class Database {
         );
     }
 
-    insertDepartment(department) {
-        return this.db_connection.query("INSERT INTO department SET ?", department);
-    }
+    // insertDepartment(department) {
+    //     return this.db_connection.query("INSERT INTO department SET ?", department);
+    // }
 
-    deleteDepartment(departmentId) {
-        return this.db_connection.query("DELETE FROM department WHERE id = ?", departmentId);
-    }
+    // deleteDepartment(departmentId) {
+    //     return this.db_connection.query("DELETE FROM department WHERE id = ?", departmentId);
+    //}
     // join with roles to display role titles
     // findAllEmployeesByDepartment(departmentId) {
     //     return this.db_connection.query(

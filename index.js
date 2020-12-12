@@ -5,11 +5,11 @@ require("console.table");
 
 start()
 
-function start() {
+async function start() {
     const logoImage = logo({ name: "Employee Tracker"}).render();
     console.log(logoImage);
-    promptUser()
-}
+    await promptUser();
+};
 
 async function promptUser() {
     const { answers } = await inquirer.prompt([

@@ -12,33 +12,33 @@ class Database {
         )
     }
 
-    findEveryManager(employeeId) {
+    // findEveryManager(employeeId) {
+    //     return this.db_connection.query(
+    //         "SELECT id, first_name, last_name FROM employee WHERE id != ?", employeeId
+    //     );
+    // }
+
+    insertEmployee(worker) {
+        return this.db_connection.query("INSERT INTO employee SET ?", worker);
+    }
+
+    // removeEmployee(employeeId) {
+    //     return this.db_connection.query(
+    //         "DELETE FROM employee WHERE id = ?", employeeId
+    //     )
+    // }
+
+    updateEmployeeJob(jobId, workerId) {
         return this.db_connection.query(
-            "SELECT id, first_name, last_name FROM employee WHERE id != ?", employeeId
+            "UPDATE employee SET role_id = ? WHERE id = ?", [jobId, workerId]
         );
     }
 
-    insertEmployee(employee) {
-        return this.db_connection.query("INSERT INTO employee SET ?", employee);
-    }
-
-    removeEmployee(employeeId) {
-        return this.db_connection.query(
-            "DELETE FROM employee WHERE id = ?", employeeId
-        )
-    }
-
-    updateEmployeeJob(roleId, employeeId) {
-        return this.db_connection.query(
-            "UPDATE employee SET role_id = ? WHERE id = ?", [roleId, employeeId]
-        );
-    }
-
-    updateEmployeeManager() {
-        return this.db_connection.query(
-            "UPDATE employee SET manager_id = ? WHERE id =?", [managerId, employeeId]
-        );
-    }
+    // updateEmployeeManager() {
+    //     return this.db_connection.query(
+    //         "UPDATE employee SET manager_id = ? WHERE id =?", [managerId, employeeId]
+    //     );
+    // }
     // join with departments to display department name
     findAllRoles() {
         return this.db_connection.query(
@@ -46,9 +46,9 @@ class Database {
         );
     }
 
-    // createRole(role) {
-    //     return this.db_connection.query("INSERT INTO role SET ?", role);
-    // }
+    createRole(role) {
+        return this.db_connection.query("INSERT INTO role SET ?", role);
+    }
 
     // removeRole(roleId) {
     //     return this.db_connection.query("DELETE FROM role WHERE id = ?", roleId);
@@ -60,9 +60,9 @@ class Database {
         );
     }
 
-    // insertDepartment(department) {
-    //     return this.db_connection.query("INSERT INTO department SET ?", department);
-    // }
+    insertDepartment(department) {
+        return this.db_connection.query("INSERT INTO department SET ?", department);
+    }
 
     // deleteDepartment(departmentId) {
     //     return this.db_connection.query("DELETE FROM department WHERE id = ?", departmentId);

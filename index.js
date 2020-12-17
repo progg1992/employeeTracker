@@ -3,69 +3,75 @@ const logo = require("asciiart-logo");
 const db = require ('./db');
 require("console.table");
 
-start()
-
-async function start() {
-    const logoImage = logo({ name: "Employee Tracker"}).render();
-    console.log(logoImage);
-    await promptUser();
-};
-
-async function promptUser() {
-    const { answers } = await inquirer.prompt([
+const answers = [
     {
         message: "What would you like to Do?",
         name: 'usersChoice',
         type: 'list',
         choices: [{
-            name: "View All Employees",
-            value: 1
-        },{
-            name: "Add Employee",
-            value: 2
-        },{
-            name: "Update Employee Role",
-            value: 3
-        },{
-            name: "Show All Roles",
-            value: 4
-        },{
-            name: "Add Role",
-            value: 5
-        },{
-            name: "Show All Departments",
-            value: 6
-        },{
-            name: "Add Deparment",
-            value: 7
-        },{
-            name: "End Application",
-            value: 8
-        },
-    ]}
-]);
+                name: "View All Employees",
+                value: 1
+            },{
+                name: "Add Employee",
+                value: 2
+            },{
+                name: "Update Employee Role",
+                value: 3
+            },{
+                name: "Show All Roles",
+                value: 4
+            },{
+                name: "Add Role",
+                value: 5
+            },{
+                name: "Show All Departments",
+                value: 6
+            },{
+                name: "Add Deparment",
+                value: 7
+            },{
+                name: "End Application",
+                value: 8
+            },
+        ]
+    }
+];
 
-console.log(answers.usersChoice)
+start()
 
-switch(usersChoice) {
-    case 1:
-        return showEmployees();
-    case 2:
-        return addEmployee();
-    case 3:
-        return updateEmployeeJob();
-    case 4: 
-        return showRoles();
-    case 5:
-        return addRole();
-    case 6:
-        return showDepartments();
-    case 7:
-        return addDepartment();
-    case 8:
-        return endApplication();
-}
+function start() {
+    const logoImage = logo({ name: "Employee Tracker"}).render();
+    console.log(logoImage);
+    promptUser();
+};
 
+function promptUser() {
+    inquirer.prompt(answers)
+    .then(function(answers) {
+        console.log('Test')
+        
+        switch(answers.usersChoice) {
+            case 1:
+                return showEmployees();
+            case 2:
+                return addEmployee();
+            case 3:
+                return updateEmployeeJob();
+            case 4: 
+                return showRoles();
+            case 5:
+                return addRole();
+            case 6:
+                return showDepartments();
+            case 7:
+                return addDepartment();
+            case 8:
+                return endApplication();
+        }
+    })
+    .catch(function(err) {
+        console.log(err)
+    })
 }
 
 async function showEmployees() {

@@ -5,12 +5,14 @@ const { createConnection } = require('net');
 const db_connection = mysql.createConnection({
     // Host for Development
     host: "localhost",
+    // Port for Development Database
+    port: 3306,
     // Database user name
-    user: process.env.USER_NAME,
+    user: 'root',
     // Database password
-    password: process.env.PASSWORD,
+    password: "rootroot",
     // Database Name
-    database: process.env.DATABASE
+    database: 'employees'
 });
 
 db_connection.connect();

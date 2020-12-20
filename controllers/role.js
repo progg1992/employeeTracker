@@ -1,3 +1,5 @@
+const db = require("../db");
+
 async function showRoles() {
     let jobs;
     try {
@@ -51,3 +53,5 @@ async function addRole() {
 
     promptUser();
 }
+
+export { showRoles, addRole };

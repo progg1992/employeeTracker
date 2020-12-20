@@ -1,3 +1,5 @@
+const db = require('../db');
+
 async function showEmployees() {
     let workers;
     try {
@@ -120,3 +122,5 @@ async function addEmployee() {
     
     promptUser();
 }
+
+export { showEmployees, updateEmployeeJob, addEmployee };

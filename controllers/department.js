@@ -1,3 +1,5 @@
+const db = require("../db");
+
 async function showDepartments() {
     let departments;
     try {
@@ -41,4 +43,17 @@ async function addDepartment() {
     } catch (err) {
         console.log(err);
     }
+
+    let newDepartment;
+    try {
+        console.log(newDepartment)
+        newJob = await db.insertDepartment(department)
+        console.log('Added Department')
+    } catch(err) {
+        console.log('Could not add Role')
+    }
+
+    promptUser();
 }
+
+export { showDepartments, addDepartment };

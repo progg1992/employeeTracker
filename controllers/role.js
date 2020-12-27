@@ -54,4 +54,4 @@ async function addRole() {
     promptUser();
 }
 
-export { showRoles, addRole };
+module.exports = { showRoles, addRole };

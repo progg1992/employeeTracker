@@ -1,5 +1,4 @@
-const answers = [
-    {
+const answers = {
         message: "What would you like to Do?",
         name: 'usersChoice',
         type: 'list',
@@ -29,7 +28,6 @@ const answers = [
                 value: 8
             },
         ]
-    }
-];
+    };
 
-export { answers }
+module.exports = { answers }

@@ -1,5 +1,6 @@
 const db = require('../db');
 
+
 async function showEmployees() {
     let workers;
     try {
@@ -9,8 +10,8 @@ async function showEmployees() {
     }
     console.log("\n");
     console.table(workers);
-    promptUser();
-}
+   // promptUser();
+};
 
 async function updateEmployeeJob() {
     let workers;
@@ -76,7 +77,7 @@ async function updateEmployeeJob() {
     
 
     promptUser();
-}
+};
 
 async function addEmployee() {
     let jobs;
@@ -121,6 +122,6 @@ async function addEmployee() {
     console.log("Successfully Added Employee to the Database");
     
     promptUser();
-}
+};
 
-export { showEmployees, updateEmployeeJob, addEmployee };
+module.exports = { showEmployees, updateEmployeeJob, addEmployee };

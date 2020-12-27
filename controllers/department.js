@@ -50,10 +50,10 @@ async function addDepartment() {
         newJob = await db.insertDepartment(department)
         console.log('Added Department')
     } catch(err) {
-        console.log('Could not add Role')
+        console.log('Could not add Department')
     }
 
     promptUser();
 }
 
-export { showDepartments, addDepartment };
+module.exports = { showDepartments, addDepartment };

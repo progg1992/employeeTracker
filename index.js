@@ -1,6 +1,9 @@
 const inquirer = require("inquirer");
 const logo = require("asciiart-logo");
-require('./controllers');
+const { answers } = require('./controllers/answers');
+const { showDepartments, addDepartment } = require('./controllers/department');
+const { showEmployees, updateEmployeeJob, addEmployee } = require('./controllers/employee');
+const { showRoles, addRole } = require('./controllers/role');
 require("console.table");
 
 start()
@@ -12,6 +15,7 @@ function start() {
 };
 
 function promptUser() {
+    console.log(answers);
     inquirer.prompt(answers).then(function(answers) {        
         switch(answers.usersChoice) {
             case 1:
@@ -40,6 +44,7 @@ function promptUser() {
                 default:
                     break;
         }
+        promptUser();
     }).catch(function(err) {
         console.log(err)
     })
